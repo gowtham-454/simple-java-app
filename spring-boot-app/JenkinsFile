@@ -49,6 +49,9 @@ pipeline {
                     BUILD_NUMBER=${BUILD_NUMBER}
                     cat spring-boot-app-manifests/deployment.yml
                     git status
+                    git branch
+                    git checkout master
+                    git branch
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yml
                     cat spring-boot-app-manifests/deployment.yml
                     git status
